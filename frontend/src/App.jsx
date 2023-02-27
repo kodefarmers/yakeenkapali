@@ -5,6 +5,11 @@ const theme = createTheme({
     palette: {
         mode: 'dark',
     },
+    typography: {
+        fontFamily: [
+            'Kanit',
+        ].join(','),
+    },
 })
 
 function App() {

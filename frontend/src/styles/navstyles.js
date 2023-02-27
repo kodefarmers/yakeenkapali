@@ -1,11 +1,11 @@
 import { makeStyles } from 'tss-react/mui'
 
-const useStyles = makeStyles()((theme) => {
+const navStyles = makeStyles()((theme) => {
     return {
         title: {
             margin: theme.spacing(0, 0.5, 0),
             fontStyle: 'italic',
-            fontWeight: 500,
+            fontWeight: 800,
             letterSpacing: '.1rem',
         },
         logo: {
@@ -52,8 +52,7 @@ const useStyles = makeStyles()((theme) => {
                 display: 'none'
             },
         }
-
     }
 })
 
-export default useStyles
+export default navStyles

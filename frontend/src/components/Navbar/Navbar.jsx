@@ -1,11 +1,11 @@
 import { AppBar, Button, IconButton, Menu, MenuItem, Toolbar, Typography } from "@mui/material"
 import { Box } from "@mui/system"
-import useStyles from '../../styles'
+import navStyles from '../../styles/navstyles'
 import MenuIcon from '@mui/icons-material/Menu'
 import { useState } from "react"
 
 const Navbar = () => {
-    const { classes } = useStyles()
+    const { classes } = navStyles()
     const pages = ['Works', 'About', 'Blog']
     const [anchorElNav, setAnchorElNav] = useState(null)
 
@@ -23,7 +23,7 @@ const Navbar = () => {
                 <Toolbar>
                     <Box className={classes.logo}>
                         <Typography className={classes.title} variant="h6">
-                            yakeen
+                            yakeen.
                         </Typography>
                     </Box>
 
