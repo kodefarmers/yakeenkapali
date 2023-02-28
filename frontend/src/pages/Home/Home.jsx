@@ -2,6 +2,7 @@ import { Container } from "@mui/system"
 import About from "../../components/About/About"
 import Hero from "../../components/Hero/Hero"
 import Navbar from "../../components/Navbar/Navbar"
+import Works from "../../components/Works/Works"
 
 const Home = () => {
     return (
@@ -9,6 +10,7 @@ const Home = () => {
             <Navbar />
             <Hero />
             <About />
+            <Works />
         </Container>
     )
 }

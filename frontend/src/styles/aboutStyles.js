@@ -5,7 +5,8 @@ const aboutStyles = makeStyles()((theme) => {
         about: {
             display: 'flex',
             justifyContent: 'space-evenly',
-            alignItems: 'center'
+            alignItems: 'center',
+            height: '100vh',
         },
 
         aboutGrid: {},
