@@ -32,7 +32,7 @@ const Navbar = () => {
                     {/* Navigation Medium */}
                     <Box className={classes.navMedium}>
                         {pages.map((page) => (
-                            <Link to={page.toLowerCase()} spy={true} smooth={true} offset={50} duration={500} key={page} className={classes.navButtons}>
+                            <Link to={page.toLowerCase()} spy={true} smooth={true} duration={500} key={page} className={classes.navButtons}>
                                 <Typography>{page}</Typography>
                             </Link>
                         ))}

@@ -3,8 +3,12 @@ import { makeStyles } from 'tss-react/mui'
 const heroStyles = makeStyles()((theme) => {
     return {
         hero: {
-            flexGrow: 1
+            flexGrow: 1,
             // width: '50%',
+            height: '100vh',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
         },
         heroBox: {},
         heroBoxLeft: {
