@@ -6,7 +6,7 @@ const About = () => {
     const { classes } = aboutStyles()
 
     return (
-        <Box className={classes.about}>
+        <Box className={classes.about} id="about">
             <Grid container spacing={2} justifyContent="space-between" className={classes.aboutGrid}>
                 <Grid xs={12} md={4} item={true} order={{ xs: 2, sm: 2, md: 1 }}>
                     <Box className={classes.aboutBoxLeft}>

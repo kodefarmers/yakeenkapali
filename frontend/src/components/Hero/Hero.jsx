@@ -8,7 +8,7 @@ const Hero = () => {
     const { classes } = heroStyles()
 
     return (
-        <Box className={classes.hero}>
+        <Box className={classes.hero} id="home">
             <Grid container spacing={2}>
                 <Grid xs={12} md={7} item={true} className={classes.heroLeft}>
                     <img src={image} alt="" className={classes.heroImage} />

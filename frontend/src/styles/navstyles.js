@@ -22,7 +22,11 @@ const navStyles = makeStyles()((theme) => {
             textDecoration: 'none',
             ":focus": {
                 outline: 'none'
-            }
+            },
+            cursor: 'pointer',
+            margin: '0 1rem',
+            fontSize: '1.2rem',
+            textTransform: 'uppercase'
         },
         navMedium: {
             display: 'flex',
@@ -51,6 +55,10 @@ const navStyles = makeStyles()((theme) => {
             [theme.breakpoints.down('sm')]: {
                 display: 'none'
             },
+        },
+        scrollLink: {
+            color: 'white',
+            textDecoration: 'none',
         }
     }
 })

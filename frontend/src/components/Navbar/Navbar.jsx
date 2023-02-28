@@ -3,10 +3,12 @@ import { Box } from "@mui/system"
 import navStyles from '../../styles/navstyles'
 import MenuIcon from '@mui/icons-material/Menu'
 import { useState } from "react"
+import { Link } from 'react-scroll'
 
 const Navbar = () => {
     const { classes } = navStyles()
-    const pages = ['Works', 'About', 'Blog']
+
+    const pages = ['About', 'Works', 'Blog']
     const [anchorElNav, setAnchorElNav] = useState(null)
 
     const handleOpenNavMenu = (event) => {
@@ -30,9 +32,9 @@ const Navbar = () => {
                     {/* Navigation Medium */}
                     <Box className={classes.navMedium}>
                         {pages.map((page) => (
-                            <Button key={page} className={classes.navButtons}>
+                            <Link to={page.toLowerCase()} spy={true} smooth={true} offset={50} duration={500} key={page} className={classes.navButtons}>
                                 <Typography>{page}</Typography>
-                            </Button>
+                            </Link>
                         ))}
                     </Box>
 
