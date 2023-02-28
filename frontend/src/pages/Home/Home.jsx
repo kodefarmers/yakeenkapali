@@ -1,4 +1,5 @@
 import { Container } from "@mui/system"
+import About from "../../components/About/About"
 import Hero from "../../components/Hero/Hero"
 import Navbar from "../../components/Navbar/Navbar"
 
@@ -7,6 +8,7 @@ const Home = () => {
         <Container>
             <Navbar />
             <Hero />
+            <About />
         </Container>
     )
 }
