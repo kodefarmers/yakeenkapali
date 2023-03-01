@@ -24,7 +24,6 @@ const About = () => {
                 <Grid xs={12} md={7} item={true} className={classes.aboutRight} order={{ xs: 1, sm: 1, md: 2 }}>
                     <img src={image} alt="" className={classes.aboutImage} />
                 </Grid>
-
             </Grid>
         </Box>
     )
