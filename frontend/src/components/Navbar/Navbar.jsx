@@ -3,7 +3,6 @@ import { Box } from "@mui/system"
 import navStyles from '../../styles/navstyles'
 import MenuIcon from '@mui/icons-material/Menu'
 import { useState } from "react"
-import { Link } from 'react-scroll'
 
 const Navbar = () => {
     const { classes } = navStyles()
@@ -32,9 +31,9 @@ const Navbar = () => {
                     {/* Navigation Medium */}
                     <Box className={classes.navMedium}>
                         {pages.map((page) => (
-                            <Link to={page.toLowerCase()} spy={true} smooth={true} duration={500} key={page} className={classes.navButtons}>
+                            <Button href={`#${page.toLowerCase()}`} key={page} className={classes.navButtons}>
                                 <Typography>{page}</Typography>
-                            </Link>
+                            </Button>
                         ))}
                     </Box>
 
@@ -76,7 +75,7 @@ const Navbar = () => {
                     </Box>
 
                     <Box>
-                        <Button className={classes.contactButton} variant="outlined">Contact</Button>
+                        <Button className={classes.contactButton} variant="outlined" href="#contact">Contact</Button>
                     </Box>
 
 
