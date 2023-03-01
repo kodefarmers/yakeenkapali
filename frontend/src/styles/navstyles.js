@@ -7,6 +7,8 @@ const navStyles = makeStyles()((theme) => {
             fontStyle: 'italic',
             fontWeight: 800,
             letterSpacing: '.1rem',
+            color: 'white',
+            textDecoration: 'none',
         },
         logo: {
             flexGrow: 1,

@@ -1,4 +1,4 @@
-import { AppBar, Button, IconButton, Menu, MenuItem, Toolbar, Typography } from "@mui/material"
+import { AppBar, Button, IconButton, Link, Menu, MenuItem, Toolbar, Typography } from "@mui/material"
 import { Box } from "@mui/system"
 import navStyles from '../../styles/navstyles'
 import MenuIcon from '@mui/icons-material/Menu'
@@ -23,9 +23,9 @@ const Navbar = () => {
             <AppBar>
                 <Toolbar>
                     <Box className={classes.logo}>
-                        <Typography className={classes.title} variant="h6">
+                        <Link href="#home" className={classes.title} variant="h6">
                             yakeen.
-                        </Typography>
+                        </Link>
                     </Box>
 
                     {/* Navigation Medium */}
