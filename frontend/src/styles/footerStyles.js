@@ -12,6 +12,8 @@ const footerStyles = makeStyles()((theme) => {
         footerTitle: {
             margin: theme.spacing(2, 0, 0, 0),
             fontStyle: 'italic',
+            textDecoration: 'none',
+            color: 'white'
         },
         footerSocials: {
             margin: theme.spacing(2, 2),

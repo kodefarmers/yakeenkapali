@@ -1,4 +1,4 @@
-import { Box, IconButton, Typography } from "@mui/material"
+import { Box, IconButton, Typography, Link } from "@mui/material"
 import footerStyles from "../../styles/footerStyles"
 import InstagramIcon from '@mui/icons-material/Instagram'
 import FacebookIcon from '@mui/icons-material/Facebook'
@@ -10,7 +10,7 @@ const Footer = () => {
     return (
         <Box className={classes.footer}>
             <Box>
-                <Typography variant="h4" className={classes.footerTitle}>yakeenkapali.</Typography>
+                <Link href="#home" variant="h4" className={classes.footerTitle}>yakeenkapali.</Link>
             </Box>
             <Box className={classes.footerSocials}>
                 <IconButton href="https://instagram.com/paubha_" target="_blank" rel="noopener">
