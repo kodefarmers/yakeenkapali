@@ -63,13 +63,13 @@ const Navbar = () => {
                                     key={page}
                                     onClick={handleCloseNavMenu}
                                 >
-                                    <Typography>{page}</Typography>
+                                    <Link href={`#${page.toLowerCase()}`} className={classes.navButtons}>{page}</Link>
                                 </MenuItem>
                             ))}
                             <MenuItem
                                 onClick={handleCloseNavMenu}
                             >
-                                <Typography>Contact</Typography>
+                                <Link href="#contact" className={classes.navButtons}>Contact</Link>
                             </MenuItem>
                         </Menu>
                     </Box>
