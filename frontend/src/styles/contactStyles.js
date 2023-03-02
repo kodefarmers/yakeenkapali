@@ -7,7 +7,6 @@ const contactStyles = makeStyles()((theme) => {
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
-            height: '100vh',
         },
         contactGrid: {
             display: 'flex',

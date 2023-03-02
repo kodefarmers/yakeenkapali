@@ -5,7 +5,6 @@ const heroStyles = makeStyles()((theme) => {
         hero: {
             flexGrow: 1,
             // width: '50%',
-            height: '100vh',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center'

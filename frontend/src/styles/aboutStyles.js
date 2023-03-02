@@ -6,7 +6,6 @@ const aboutStyles = makeStyles()((theme) => {
             display: 'flex',
             justifyContent: 'space-evenly',
             alignItems: 'center',
-            height: '100vh',
         },
 
         aboutGrid: {},
