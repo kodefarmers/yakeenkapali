@@ -20,14 +20,11 @@ const navStyles = makeStyles()((theme) => {
         },
         navButtons: {
             color: 'white',
-            margin: theme.spacing(0, 0.5, 0),
             textDecoration: 'none',
             ":focus": {
                 outline: 'none'
             },
             cursor: 'pointer',
-            margin: '0 1rem',
-            fontSize: '1.2rem',
             textTransform: 'uppercase'
         },
         navMedium: {

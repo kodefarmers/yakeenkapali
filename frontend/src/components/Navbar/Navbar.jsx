@@ -59,18 +59,22 @@ const Navbar = () => {
                             onClose={handleCloseNavMenu}
                         >
                             {pages.map((page) => (
+                                <Link href={`#${page.toLowerCase()}`} className={classes.navButtons}>
+                                    <MenuItem
+                                        key={page}
+                                        onClick={handleCloseNavMenu}
+                                    >
+                                        {page}
+                                    </MenuItem>
+                                </Link>
+                            ))}
+                            <Link href="#contact" className={classes.navButtons}>
                                 <MenuItem
-                                    key={page}
                                     onClick={handleCloseNavMenu}
                                 >
-                                    <Link href={`#${page.toLowerCase()}`} className={classes.navButtons}>{page}</Link>
+                                    Contact
                                 </MenuItem>
-                            ))}
-                            <MenuItem
-                                onClick={handleCloseNavMenu}
-                            >
-                                <Link href="#contact" className={classes.navButtons}>Contact</Link>
-                            </MenuItem>
+                            </Link>
                         </Menu>
                     </Box>
 
