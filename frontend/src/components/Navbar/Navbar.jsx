@@ -7,7 +7,7 @@ import { useState } from "react"
 const Navbar = () => {
     const { classes } = navStyles()
 
-    const pages = ['About', 'Works', 'Blog']
+    const pages = ['About', 'Works']
     const [anchorElNav, setAnchorElNav] = useState(null)
 
     const handleOpenNavMenu = (event) => {
@@ -35,6 +35,10 @@ const Navbar = () => {
                                 <Typography>{page}</Typography>
                             </Button>
                         ))}
+                        <Button href="/blog" className={classes.navButtons}>
+                            <Typography>Blog</Typography>
+                        </Button>
+
                     </Box>
 
                     {/* Navigation Small */}
@@ -59,15 +63,22 @@ const Navbar = () => {
                             onClose={handleCloseNavMenu}
                         >
                             {pages.map((page) => (
-                                <Link href={`#${page.toLowerCase()}`} className={classes.navButtons}>
+                                <Link href={`#${page.toLowerCase()}`} className={classes.navButtons} key={page}>
                                     <MenuItem
-                                        key={page}
                                         onClick={handleCloseNavMenu}
                                     >
                                         {page}
                                     </MenuItem>
                                 </Link>
                             ))}
+                            <Link href="/blog" className={classes.navButtons}>
+                                <MenuItem
+                                    onClick={handleCloseNavMenu}
+                                >
+                                    Blog
+                                </MenuItem>
+                            </Link>
+
                             <Link href="#contact" className={classes.navButtons}>
                                 <MenuItem
                                     onClick={handleCloseNavMenu}
