@@ -22,7 +22,7 @@ const Navbar = ({ pages }) => {
             <AppBar>
                 <Toolbar>
                     <Box className={classes.logo}>
-                        <Link href="#home" className={classes.title} variant="h6">
+                        <Link href="/#home" className={classes.title} variant="h6">
                             yakeen.
                         </Link>
                     </Box>
