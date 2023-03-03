@@ -16,17 +16,14 @@ const Hero = () => {
                 <Grid xs={12} md={4} item={true}>
                     <Box className={classes.heroBoxRight}>
                         <Typography variant='overline' className={classes.heroSubtitle}>
-                            eat sleep design repeat
+                            Minimalistic approach to Creative thinking
                         </Typography>
                         <Typography variant='h4' className={classes.heroTitle}>
                             Brand Identity and UI Designer
                         </Typography>
                         <Typography variant="subtitle2" className={classes.heroDescription}>
-                            Over the past 9 years,
-                            as an art director and designer,
-                            I’ve worked with big companies
-                            and up-and-coming startups to successfully h
-                            elp them reach their full potential and attract new customers.
+                            Throughout my 3+ years of the design journey, I have been driven by a passion for creativity and problem-solving, as well as a commitment to delivering the highest level of quality and service to my clients.
+                            I am constantly seeking new challenges and opportunities to learn and grow, and am excited to see where the field of graphic design will take me in the future.
                         </Typography>
                     </Box>
                 </Grid>

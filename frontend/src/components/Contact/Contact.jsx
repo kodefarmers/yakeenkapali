@@ -8,7 +8,7 @@ const Contact = () => {
     const { classes } = contactStyles()
     return (
         <Box className={classes.contact} id="contact">
-            <Typography variant="overline" sx={{ color: 'gray' }}>Get in touch bitch</Typography>
+            <Typography variant="overline" sx={{ color: 'gray' }}>Get in touch</Typography>
             <Typography variant="h5">Contact Me</Typography>
             <Grid container spacing={2} justifyContent="space-between" className={classes.contactGrid}>
                 <Grid xs={12} md={4} item={true} className={classes.contactLeft} order={{ xs: 2, sm: 2, md: 1 }}>
