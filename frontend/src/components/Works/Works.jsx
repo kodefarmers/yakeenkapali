@@ -43,7 +43,7 @@ const Works = () => {
                 {works.length != visibleImages.length ? (
                     <Button variant="contained" onClick={handleLoadMoreWorks} className={classes.loadMoreButton}>More</Button>
                 ) : (
-                    <Button variant="contained" disabled className={classes.loadMoreButton}>Sakkiyo Lodu! yo bhanda kati chaiyo ra?</Button>
+                    <Button variant="contained" disabled className={classes.loadMoreButton}>You’ve reached the end of the list</Button>
                 )}
             </Grid>
 

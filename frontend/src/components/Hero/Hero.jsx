@@ -16,7 +16,7 @@ const Hero = () => {
                 <Grid xs={12} md={4} item={true}>
                     <Box className={classes.heroBoxRight}>
                         <Typography variant='overline' className={classes.heroSubtitle}>
-                            yakeen hoki chakin ho?
+                            eat sleep design repeat
                         </Typography>
                         <Typography variant='h4' className={classes.heroTitle}>
                             Brand Identity and UI Designer

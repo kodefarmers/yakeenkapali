@@ -17,7 +17,7 @@ const About = () => {
                             The name's Kapali. Yakeen Kapali.
                         </Typography>
                         <Typography variant="subtitle2" className={classes.aboutDescription}>
-                            I'm a brown kid from Nepal. I'm young. I love handcarfted stuff.
+                            I'm a brown kid from Nepal. I'm young. I love Zoe Saldana.
                         </Typography>
                     </Box>
                 </Grid>
