@@ -7,9 +7,23 @@ import Navbar from "../../components/Navbar/Navbar"
 import Works from "../../components/Works/Works"
 
 const Home = () => {
+    const pages = [
+        {
+            name: 'About',
+            link: '/#about'
+        },
+        {
+            name: 'Works',
+            link: '/#works'
+        },
+        {
+            name: 'Blog',
+            link: '/blog'
+        },
+    ]
     return (
         <Container>
-            <Navbar />
+            <Navbar pages={pages} />
             <Hero />
             <About />
             <Works />

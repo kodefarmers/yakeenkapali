@@ -4,10 +4,9 @@ import navStyles from '../../styles/navstyles'
 import MenuIcon from '@mui/icons-material/Menu'
 import { useState } from "react"
 
-const Navbar = () => {
+const Navbar = ({ pages }) => {
     const { classes } = navStyles()
 
-    const pages = ['About', 'Works']
     const [anchorElNav, setAnchorElNav] = useState(null)
 
     const handleOpenNavMenu = (event) => {
@@ -31,14 +30,10 @@ const Navbar = () => {
                     {/* Navigation Medium */}
                     <Box className={classes.navMedium}>
                         {pages.map((page) => (
-                            <Button href={`#${page.toLowerCase()}`} key={page} className={classes.navButtons}>
-                                <Typography>{page}</Typography>
+                            <Button href={page.link} key={page.name} className={classes.navButtons}>
+                                <Typography>{page.name}</Typography>
                             </Button>
                         ))}
-                        <Button href="/blog" className={classes.navButtons}>
-                            <Typography>Blog</Typography>
-                        </Button>
-
                     </Box>
 
                     {/* Navigation Small */}
@@ -63,23 +58,15 @@ const Navbar = () => {
                             onClose={handleCloseNavMenu}
                         >
                             {pages.map((page) => (
-                                <Link href={`#${page.toLowerCase()}`} className={classes.navButtons} key={page}>
+                                <Link href={page.link} className={classes.navButtons} key={page.name}>
                                     <MenuItem
                                         onClick={handleCloseNavMenu}
                                     >
-                                        {page}
+                                        {page.name}
                                     </MenuItem>
                                 </Link>
                             ))}
-                            <Link href="/blog" className={classes.navButtons}>
-                                <MenuItem
-                                    onClick={handleCloseNavMenu}
-                                >
-                                    Blog
-                                </MenuItem>
-                            </Link>
-
-                            <Link href="#contact" className={classes.navButtons}>
+                            <Link href="/#contact" className={classes.navButtons}>
                                 <MenuItem
                                     onClick={handleCloseNavMenu}
                                 >
@@ -90,7 +77,7 @@ const Navbar = () => {
                     </Box>
 
                     <Box>
-                        <Button className={classes.contactButton} variant="outlined" href="#contact">Contact</Button>
+                        <Button className={classes.contactButton} variant="outlined" href="/#contact">Contact</Button>
                     </Box>
 
 
