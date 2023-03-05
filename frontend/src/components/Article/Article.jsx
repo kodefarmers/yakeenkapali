@@ -9,6 +9,17 @@ const Article = () => {
 
     return (
         <Box className={classes.article}>
+            <Paper className={classes.articleRight}>
+                <Typography gutterBottom variant="overline" component="div">
+                    Latest Posts
+                </Typography>
+
+                <Box className={classes.latestPosts}>
+                    {latestPosts.map(post => (
+                        <Link href="/1" key={post} variant="subtitle2" className={classes.latestPostLink}>Latest post {post}</Link>
+                    ))}
+                </Box>
+            </Paper>
             <Grid container spacing={2} justifyContent="space-between" className={classes.articleLeft}>
                 {articles.map(article => (
                     <Grid xs={12} md={6} item={true} key={article}>
@@ -22,10 +33,10 @@ const Article = () => {
                                 </CardMedia>
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="div">
-                                        How to sew a keyrign at home.
+                                        Blog posts coming soon!
                                     </Typography>
                                     <Typography variant="body2" color="text.secondary">
-                                        Give Rs. 300 worth of chocolate to a girl and hopefully she'll do it for you. *fingers-crossed* :P
+                                        Blogs will be up and running after a while until then follow me on instagram: <Link href="https://instagram.com/paubha_" target="_blank" rel="noopener">Paubha</Link> :P
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
@@ -37,19 +48,7 @@ const Article = () => {
                     </Grid>
                 ))}
             </Grid>
-            <Paper className={classes.articleRight}>
-                <Typography gutterBottom variant="overline" component="div">
-                    Latest Posts
-                </Typography>
-
-                <Box className={classes.latestPosts}>
-                    {latestPosts.map(post => (
-                        <Link href="/1" variant="subtitle2" className={classes.latestPostLink}>Latest post {post}</Link>
-                    ))}
-                </Box>
-
-            </Paper>
-        </Box >
+        </Box>
     )
 }
 
