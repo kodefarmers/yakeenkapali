@@ -1,5 +1,5 @@
 import { Container } from "@mui/system"
-import ArticleGrid from "../../components/ArticleGrid/ArticleGrid"
+import Article from "../../components/Article/Article"
 import Navbar from "../../components/Navbar/Navbar"
 
 const Blog = () => {
@@ -17,7 +17,7 @@ const Blog = () => {
     return (
         <Container>
             <Navbar pages={pages} />
-            <ArticleGrid />
+            <Article />
         </Container>
     )
 }

@@ -2,34 +2,33 @@ import { makeStyles } from "tss-react/mui";
 
 const articleStyles = makeStyles()((theme) => {
     return {
-        article: {
+        articleContainer: {
             margin: theme.spacing(10, 0, 0, 0),
             display: 'flex',
-            justifyContent: 'space-around',
-            alignItems: 'center'
+            justifyContent: 'center',
+            alignContent: 'center'
         },
-        articleLeft: {
-            padding: theme.spacing(1),
-        },
-        articleRight: {
-            width: '25%',
-            padding: theme.spacing(2),
-            wordWrap: 'break-word'
-        },
-        articleCard: {
-            padding: theme.spacing(1)
-        },
-        latestPosts: {
+        article: {
+            width: '80%',
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'space-around',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: theme.spacing(5)
+        },
+        articleTitle: {
 
         },
-        latestPostLink: {
-            color: 'gray',
-            margin: theme.spacing(1, 0, 0, 0),
+        articleSlug: {
+            fontSize: '.8rem'
+        },
+        articleDescription: {
+            margin: theme.spacing(2, 0, 0, 0),
+            fontSize: '1.1rem'
+        },
+        horizontalLine: {
+            width: '80%',
         }
-
     }
 })
 
