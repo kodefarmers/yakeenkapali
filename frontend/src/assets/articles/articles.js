@@ -1,7 +1,7 @@
 const articles = [
     {
         id: 1,
-        title: 'What makes a Logo Great?',
+        title: 'What makes a Logo Great ?',
         slug: 'Decoding the Art of Logo Design: The Key Elements that Make a Great Logo',
         paragraphs: [
             {
