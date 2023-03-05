@@ -11,7 +11,7 @@ const Article = () => {
         <Box className={classes.article}>
             <Grid container spacing={2} justifyContent="space-between" className={classes.articleLeft}>
                 {articles.map(article => (
-                    <Grid xs={12} md={6} item={true}>
+                    <Grid xs={12} md={6} item={true} key={article}>
                         <Box>
                             <Card className={classes.articleCard}>
                                 <CardMedia
