@@ -33,15 +33,6 @@ const carouselStyles = makeStyles()((theme) => {
             cursor: 'pointer',
             // objectFit: 'cover',
             padding: theme.spacing(1),
-            [theme.breakpoints.down('lg')]: {
-                maxWidth: '13rem',
-            },
-            [theme.breakpoints.down('md')]: {
-                maxWidth: '11rem',
-            },
-            [theme.breakpoints.down('sm')]: {
-                maxWidth: '9rem',
-            },
         },
     }
 })
