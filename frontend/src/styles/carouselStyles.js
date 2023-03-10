@@ -12,28 +12,25 @@ const marquee = keyframes`
 
 const carouselStyles = makeStyles()((theme) => {
     return {
-        carouselWrapper: {
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
+        carousel: {
             margin: theme.spacing(5, 0, 5, 0),
-            overflow: 'hidden',
         },
         carouselBox: {
             position: 'relative',
             display: 'flex',
+            overflow: 'hidden',
         },
         carouselImageBox: {
             display: 'flex',
             position: 'relative',
             alignItems: 'center',
-            animation: `${marquee} 40s linear infinite`,
+            animation: `${marquee} 15s infinite linear`,
             justifyContent: 'space-around',
         },
         carouselImage: {
             display: 'block',
             maxWidth: '15rem',
+            cursor: 'pointer',
             // objectFit: 'cover',
             padding: theme.spacing(1),
             [theme.breakpoints.down('lg')]: {

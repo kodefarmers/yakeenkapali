@@ -1,4 +1,4 @@
-import { Box, Typography, Button, Stack } from "@mui/material"
+import { Box, Typography, Button } from "@mui/material"
 import carouselStyles from "../../styles/carouselStyles"
 // import ArrowRightSharpIcon from '@mui/icons-material/ArrowRightSharp';
 // import ArrowLeftSharpIcon from '@mui/icons-material/ArrowLeftSharp';
@@ -21,34 +21,43 @@ const Carousel = ({ works }) => {
     //     setFirstImageWidth(carousel.current.childNodes[0].clientWidth)
     // }, [])
 
+    const defaultNoOfImages = 8
+    const [visibleImages, setVisibleImages] = useState([])
+
+    useEffect(() => {
+        const arr = []
+        for (let i = 0; i < defaultNoOfImages; i++) {
+            arr.push(works[i])
+        }
+        setVisibleImages(arr);
+    }, [])
+
     return (
         <Box className={classes.carousel} id="works">
-            <Box className={classes.carouselWrapper}>
-                <Typography variant="h3" className={classes.worksTitle} align="center" sx={{ fontWeight: 300, textTransform: 'uppercase' }}>
-                    Works
-                </Typography>
-                {/* <IconButton onClick={handleLeftClick}> */}
-                {/*     <ArrowLeftSharpIcon /> */}
-                {/* </IconButton> */}
-                <Box className={classes.carouselBox} ref={carousel}>
-                    <Box className={classes.carouselImageBox}>
-                        {works.map(({ img, alt, id }) => (
-                            <img src={img} key={id} id={id} alt={alt} className={classes.carouselImage} />
-                        ))}
-                    </Box>
-                    <Box className={classes.carouselImageBox}>
-                        {works.map(({ img, alt, id }) => (
-                            <img src={img} key={id} id={id} alt={alt} className={classes.carouselImage} />
-                        ))}
-                    </Box>
+            <Typography variant="h3" className={classes.worksTitle} align="center" sx={{ fontWeight: 300, textTransform: 'uppercase' }}>
+                Works
+            </Typography>
+            {/* <IconButton onClick={handleLeftClick}> */}
+            {/*     <ArrowLeftSharpIcon /> */}
+            {/* </IconButton> */}
+            <Box className={classes.carouselBox} ref={carousel}>
+                <Box className={classes.carouselImageBox}>
+                    {visibleImages.map(({ img, alt, id }) => (
+                        <img src={img} key={id} id={id} alt={alt} className={classes.carouselImage} />
+                    ))}
+                </Box>
+                <Box className={classes.carouselImageBox}>
+                    {visibleImages.map(({ img, alt, id }) => (
+                        <img src={img} key={id} id={id} alt={alt} className={classes.carouselImage} />
+                    ))}
                 </Box>
             </Box>
             {/* <IconButton onClick={handleRightClick}> */}
             {/*     <ArrowRightSharpIcon /> */}
             {/* </IconButton> */}
-            <Stack direction="row" justifyContent="end">
-                <Button href="/works" variant="contained" className={classes.loadMoreButton}>View in new page</Button>
-            </Stack>
+            <Box container align="right">
+                <Button href="/works" variant="contained" className={classes.loadMoreButton}>View All</Button>
+            </Box>
         </Box>
     )
 }
