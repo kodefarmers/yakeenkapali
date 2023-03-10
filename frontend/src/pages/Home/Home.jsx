@@ -5,7 +5,7 @@ import Contact from "../../components/Contact/Contact"
 import Footer from "../../components/Footer/Footer"
 import Hero from "../../components/Hero/Hero"
 import Navbar from "../../components/Navbar/Navbar"
-import Works from "../../components/Works/Works"
+// import Works from "../../components/Works/Works"
 import works from "../../assets/works/works"
 
 const Home = () => {
@@ -29,7 +29,7 @@ const Home = () => {
             <Hero />
             <About />
             <Carousel works={works} />
-            <Works />
+            {/* <Works /> */}
             <Contact />
             <Footer />
         </Container>

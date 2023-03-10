@@ -1,39 +1,51 @@
 import { makeStyles } from 'tss-react/mui'
+import { keyframes } from "@emotion/react"
+
+const marquee = keyframes`
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+`
 
 const carouselStyles = makeStyles()((theme) => {
     return {
         carousel: {
             display: 'flex',
+            flexDirection: 'column',
             justifyContent: 'center',
-            alignItems: 'center'
-
+            alignItems: 'center',
+            margin: theme.spacing(5, 0, 5, 0),
         },
         carouselBox: {
-            display: 'flex',
-            // cursor: 'pointer',
             overflow: 'hidden',
-            scrollBehavior: 'smooth',
-            // margin: theme.spacing(0, -12, 0, -12)
+            position: 'relative',
+            display: 'flex',
+        },
+        carouselImageBox: {
+            display: 'flex',
+            position: 'relative',
+            alignItems: 'center',
+            animation: `${marquee} 40s linear infinite`,
+            justifyContent: 'space-around',
         },
         carouselImage: {
-            width: 'calc(100% / 4)',
+            display: 'block',
+            maxWidth: '15rem',
             // objectFit: 'cover',
             padding: theme.spacing(1),
             [theme.breakpoints.down('lg')]: {
-                width: 'calc(100% / 3)',
-                padding: theme.spacing(0),
+                maxWidth: '13rem',
             },
             [theme.breakpoints.down('md')]: {
-                width: 'calc(100% / 2)',
-                padding: theme.spacing(0),
+                maxWidth: '11rem',
             },
             [theme.breakpoints.down('sm')]: {
-                width: '100%',
-                padding: theme.spacing(0),
+                maxWidth: '9rem',
             },
         },
-        imageList: {
-        }
     }
 })
 
