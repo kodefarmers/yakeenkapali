@@ -12,15 +12,15 @@ const marquee = keyframes`
 
 const carouselStyles = makeStyles()((theme) => {
     return {
-        carousel: {
+        carouselWrapper: {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
             margin: theme.spacing(5, 0, 5, 0),
+            overflow: 'hidden',
         },
         carouselBox: {
-            overflow: 'hidden',
             position: 'relative',
             display: 'flex',
         },
