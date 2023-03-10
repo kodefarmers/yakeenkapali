@@ -29,9 +29,9 @@ const Works = () => {
 
     return (
         <Box className={classes.works} id="works">
-            <Typography variant="h3" className={classes.worksTitle} align="center">
-                Works
-            </Typography>
+            {/* <Typography variant="h3" className={classes.worksTitle} align="center"> */}
+            {/*     Works */}
+            {/* </Typography> */}
             <ImageList variant="masonry" cols={imageListSm ? 1 : (imageListMd ? 4 : 2)} gap={8} >
                 {visibleImages.map((work) => (
                     <ImageListItem key={work.alt}>
@@ -39,7 +39,7 @@ const Works = () => {
                     </ImageListItem>
                 ))}
             </ImageList>
-            <Grid container justifyContent="flex-end">
+            <Grid container justifyContent="center">
                 {works.length != visibleImages.length ? (
                     <Button variant="contained" onClick={handleLoadMoreWorks} className={classes.loadMoreButton}>More</Button>
                 ) : (

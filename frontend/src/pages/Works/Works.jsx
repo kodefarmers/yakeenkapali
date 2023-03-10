@@ -1,6 +1,6 @@
 import { Container } from "@mui/system"
-import ArticleGrid from "../../components/ArticleGrid/ArticleGrid"
 import Navbar from "../../components/Navbar/Navbar"
+import Works from "../../components/Works/Works"
 
 const Blog = () => {
     const pages = [
@@ -9,15 +9,15 @@ const Blog = () => {
             link: '/#about'
         },
         {
-            name: 'Works',
-            link: '/works'
+            name: 'Blog',
+            link: '/blog'
         },
     ]
 
     return (
         <Container>
             <Navbar pages={pages} />
-            <ArticleGrid />
+            <Works />
         </Container>
     )
 }

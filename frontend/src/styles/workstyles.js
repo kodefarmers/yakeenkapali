@@ -4,7 +4,7 @@ const workStyles = makeStyles()((theme) => {
     return {
         works: {
             flexGrow: 1,
-            margin: theme.spacing(5, 0, 5, 0),
+            margin: theme.spacing(13, 0, 5, 0),
 
         },
         worksTitle: {
