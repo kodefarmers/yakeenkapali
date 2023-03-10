@@ -22,7 +22,7 @@ const Carousel = ({ works }) => {
     // }, [])
 
     return (
-        <Box className={classes.carousel}>
+        <Box className={classes.carousel} id="works">
             <Typography variant="h3" className={classes.worksTitle} align="center" sx={{ fontWeight: 300, textTransform: 'uppercase' }}>
                 Works
             </Typography>
