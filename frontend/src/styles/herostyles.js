@@ -7,6 +7,7 @@ const heroStyles = makeStyles()((theme) => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
+            padding: theme.spacing(10, 0, 0, 0),
             margin: theme.spacing(10, 0, 0, 0)
         },
         heroBox: {},

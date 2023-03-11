@@ -14,15 +14,14 @@ const carouselStyles = makeStyles()((theme) => {
     return {
         carousel: {
             margin: theme.spacing(5, 0, 5, 0),
+            padding: theme.spacing(10, 0, 0, 0),
         },
         carouselBox: {
-            position: 'relative',
             display: 'flex',
             overflow: 'hidden',
         },
         carouselImageBox: {
             display: 'flex',
-            position: 'relative',
             alignItems: 'center',
             animation: `${marquee} 15s infinite linear`,
             justifyContent: 'space-around',
