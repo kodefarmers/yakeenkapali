@@ -14,7 +14,7 @@ const About = () => {
                             PAUBHA
                         </Typography>
                         <Typography variant='h4' className={classes.aboutTitle}>
-                            The name's Kapali. Yakeen Kapali.
+                            The name's Yakeen Kapali.
                         </Typography>
                         <Typography variant="subtitle2" className={classes.aboutDescription}>
                             I Shot The Serif
