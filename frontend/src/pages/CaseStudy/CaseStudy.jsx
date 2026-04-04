@@ -2,7 +2,7 @@ import { Container, Box } from "@mui/system";
 import Navbar from "../../components/Navbar/Navbar";
 import { useParams } from "react-router-dom";
 
-import { CaseStudyDetail1 } from "../../components/CaseStudy/static/CaseStudyDetail1";
+import CaseStudyDetail1 from "../../components/CaseStudy/static/CaseStudyDetail1";
 import caseStudyStyles from "../../styles/caseStudyDetailStyles";
 
 const CaseStudy = () => {
@@ -14,8 +14,7 @@ const CaseStudy = () => {
     { name: "Works", link: "/works" },
   ];
 
-  const { classes } = caseStudyStyles();
-
+  // Add all your case study components here
   const caseStudies = [CaseStudyDetail1];
 
   const SelectedCaseStudy = caseStudies[caseStudyId];
@@ -24,7 +23,7 @@ const CaseStudy = () => {
     <Container>
       <Navbar pages={pages} />
 
-      <Box className={classes.caseStudyContainer}>
+      <Box sx={caseStudyStyles.caseStudyContainer}>
         {SelectedCaseStudy ? (
           <SelectedCaseStudy />
         ) : (

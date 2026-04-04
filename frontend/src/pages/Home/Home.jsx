@@ -20,8 +20,8 @@ const Home = () => {
       link: "/#works",
     },
     {
-      name: "Blog",
-      link: "/blog",
+      name: "Projects",
+      link: "/#projects",
     },
   ];
   return (
