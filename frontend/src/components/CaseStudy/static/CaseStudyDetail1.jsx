@@ -1,6 +1,14 @@
 import React from "react";
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import caseStudyDetailStyles from "../../../styles/caseStudyDetailStyles";
+import {
+  ArrowBack,
+  Download,
+  DownloadDoneOutlined,
+  DownloadOutlined,
+} from "@mui/icons-material";
+import { Link } from "react-router-dom";
+import { caseStudy1pdf } from "../../../constants/case-study";
 
 // Replace these with your actual images in /public/images
 const images = [
@@ -23,6 +31,55 @@ const images = [
 const CaseStudyDetail1 = () => {
   return (
     <Box sx={caseStudyDetailStyles.container}>
+      {/* Top bar */}
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          mt: 5,
+        }}
+      >
+        {/* Left: Back */}
+        <Box
+          component={Link}
+          to="/"
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: 1,
+            textDecoration: "none",
+            color: "inherit",
+            cursor: "pointer",
+          }}
+        >
+          <ArrowBack sx={{ fontSize: 20 }} />
+          <span style={{ fontSize: 14 }}>Back</span>
+        </Box>
+
+        {/* Right: Download */}
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            cursor: "pointer",
+            gap: 1,
+          }}
+        >
+          <a target="_blank" href={caseStudy1pdf}>
+            <Button
+              variant="outlined"
+              sx={{
+                color: "#fff",
+                borderColor: "#fff",
+              }}
+            >
+              <Download sx={{ fontSize: 20, color: "#fff" }} />
+            </Button>
+          </a>{" "}
+        </Box>
+      </Box>
+      {/* Images */}
       {images.map((src, index) => (
         <img
           key={index}
@@ -34,5 +91,4 @@ const CaseStudyDetail1 = () => {
     </Box>
   );
 };
-
 export default CaseStudyDetail1;

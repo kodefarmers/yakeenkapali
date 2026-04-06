@@ -12,6 +12,7 @@ import { Box } from "@mui/system";
 import navStyles from "../../styles/navstyles";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
+import { personalInformation } from "../../constants/info";
 
 const Navbar = ({ pages }) => {
   const { classes } = navStyles();
@@ -86,13 +87,11 @@ const Navbar = ({ pages }) => {
           </Box>
 
           <Box>
-            <Button
-              className={classes.contactButton}
-              variant="outlined"
-              href="/#contact"
-            >
-              Contact
-            </Button>
+            <a target="blank" href={personalInformation.cvUrl}>
+              <Button className={classes.contactButton} variant="outlined">
+                Download CV
+              </Button>
+            </a>
           </Box>
         </Toolbar>
       </AppBar>

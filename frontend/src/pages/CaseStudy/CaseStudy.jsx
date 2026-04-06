@@ -4,17 +4,13 @@ import { useParams } from "react-router-dom";
 
 import CaseStudyDetail1 from "../../components/CaseStudy/static/CaseStudyDetail1";
 import caseStudyStyles from "../../styles/caseStudyDetailStyles";
+import { pages } from "../../constants/nav-item";
+import { SeeMore } from "../../components/SeeAlso/SeeAlso";
 
 const CaseStudy = () => {
   const { id } = useParams();
   const caseStudyId = Number(id);
 
-  const pages = [
-    { name: "About", link: "/#about" },
-    { name: "Works", link: "/works" },
-  ];
-
-  // Add all your case study components here
   const caseStudies = [CaseStudyDetail1];
 
   const SelectedCaseStudy = caseStudies[caseStudyId];
@@ -29,6 +25,7 @@ const CaseStudy = () => {
         ) : (
           <div>Project not found. Please check the URL and try again.</div>
         )}
+        <SeeMore />
       </Box>
     </Container>
   );

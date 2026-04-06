@@ -1,11 +1,16 @@
 import { makeStyles } from "tss-react/mui";
 
-const projectDetailStyles = makeStyles()((theme) => {
+export const projectDetailStyles = makeStyles()((theme) => {
   return {
     projectContainer: {
       margin: theme.spacing(10, 0, 0, 0),
     },
   };
 });
-
-export default projectDetailStyles;
+export const projectStyles = makeStyles()((theme) => {
+  return {
+    project: {
+      padding: theme.spacing(15, 0, 0, 0),
+    },
+  };
+});

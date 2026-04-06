@@ -149,9 +149,10 @@ const CaseStudyCard = ({ id, title, description, link, image, tag }) => {
 export const CaseStudySection = () => {
   return (
     <Box
+      id="case-study"
       component="section"
       sx={{
-        py: { xs: 4, sm: 6 },
+        py: { xs: 8, sm: 10 },
         px: { xs: 2, sm: 4, md: 6 },
       }}
     >
