@@ -1,3 +1,3 @@
 export const personalInformation = {
-  cvUrl: "/cv.pdf",
+  cvUrl: "/yakeenkapali-cv-2026.pdf",
 };

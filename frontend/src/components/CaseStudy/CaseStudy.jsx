@@ -23,6 +23,8 @@ const CaseStudyCard = ({ id, title, description, link, image, tag }) => {
         overflow: "hidden",
         boxShadow: "0 2px 16px rgba(0,0,0,0.08)",
         transition: "box-shadow 0.2s ease, transform 0.2s ease",
+        textDecoration: "none",
+
         "&:hover": {
           boxShadow: "0 8px 32px rgba(0,0,0,0.14)",
           transform: "translateY(-2px)",
@@ -37,8 +39,7 @@ const CaseStudyCard = ({ id, title, description, link, image, tag }) => {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          p: { xs: 2, sm: 3 },
-          gap: 1,
+          p: { xs: 2.5, sm: 3 },
         }}
       >
         {/* Top: Tag + Title + Description */}
@@ -48,7 +49,7 @@ const CaseStudyCard = ({ id, title, description, link, image, tag }) => {
               label={tag}
               size="small"
               sx={{
-                mb: 1,
+                mb: 1.5,
                 fontSize: "0.7rem",
                 fontWeight: 600,
                 bgcolor: "primary.50",
@@ -62,8 +63,8 @@ const CaseStudyCard = ({ id, title, description, link, image, tag }) => {
             variant="h6"
             fontWeight={700}
             sx={{
-              lineHeight: 1.3,
-              mb: 0.75,
+              lineHeight: 1.4,
+              mb: 1,
               fontSize: { xs: "0.95rem", sm: "1rem" },
             }}
           >
@@ -78,7 +79,7 @@ const CaseStudyCard = ({ id, title, description, link, image, tag }) => {
               WebkitLineClamp: 3,
               WebkitBoxOrient: "vertical",
               overflow: "hidden",
-              lineHeight: 1.6,
+              lineHeight: 1.65,
             }}
           >
             {description}
@@ -86,7 +87,13 @@ const CaseStudyCard = ({ id, title, description, link, image, tag }) => {
         </Box>
 
         {/* Bottom: Arrow Link */}
-        <Box sx={{ display: "flex", alignItems: "center", mt: 1 }}>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            mt: 2,
+          }}
+        >
           <Typography
             component="a"
             href={link}
@@ -118,7 +125,10 @@ const CaseStudyCard = ({ id, title, description, link, image, tag }) => {
               bgcolor: "primary.50",
               width: 28,
               height: 28,
-              "&:hover": { bgcolor: "primary.main", color: "#fff" },
+              "&:hover": {
+                bgcolor: "primary.main",
+                color: "#fff",
+              },
               transition: "all 0.2s ease",
             }}
           >
@@ -133,9 +143,9 @@ const CaseStudyCard = ({ id, title, description, link, image, tag }) => {
         image={image}
         alt={title}
         sx={{
-          width: { xs: "100%", sm: 400 },
-          height: { xs: 200, sm: "auto" },
-          minWidth: { sm: 180 },
+          width: { xs: "100%", sm: 500 },
+          height: { xs: 220, sm: "auto" },
+          minWidth: { sm: 220 },
           objectFit: "cover",
           flexShrink: 0,
         }}
