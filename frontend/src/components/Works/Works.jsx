@@ -10,7 +10,7 @@ import {
   IconButton,
   useMediaQuery,
 } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import works from "../../assets/works/works";
 import workStyles from "../../styles/workstyles";
 import imageModalStyles from "../../styles/imageModalStyles";
@@ -19,128 +19,133 @@ import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 
 const Works = () => {
   const { classes } = workStyles();
+  const { classes: modalClasses } = imageModalStyles();
+
   const imageListSm = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const imageListMd = useMediaQuery((theme) => theme.breakpoints.up("md"));
 
-  // Load More Button Functionality
-  const defaultNoOfImages = 8;
-  const [index, setIndex] = useState(0);
-  const [visibleImages, setVisibleImages] = useState([]);
-
-  const handleLoadMoreWorks = () => {
-    setIndex(index + 1);
-  };
-  useEffect(() => {
-    const numberOfImages = defaultNoOfImages * (index + 1);
-    const arr = [];
-    for (let i = 0; i < works.length; i++) {
-      if (i < numberOfImages) arr.push(works[i]);
-    }
-    setVisibleImages(arr);
-  }, [index]);
-
   // Modal
-  const { classes: modalClasses } = imageModalStyles();
-
   const [open, setOpen] = useState(false);
-  const [selectedWork, setSelectedWork] = useState(1);
-  const [currentIndex, setCurrentIndex] = useState(selectedWork - 1);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const length = works.length;
 
   const handleImageClick = (idx) => {
     setCurrentIndex(idx);
-    handleOpen();
+    setOpen(true);
   };
 
   const handleRightClick = () => {
-    setCurrentIndex(currentIndex === length - 1 ? 0 : currentIndex + 1);
+    setCurrentIndex((prev) => (prev === length - 1 ? 0 : prev + 1));
   };
 
   const handleLeftClick = () => {
-    setCurrentIndex(currentIndex === 0 ? length - 1 : currentIndex - 1);
+    setCurrentIndex((prev) => (prev === 0 ? length - 1 : prev - 1));
   };
 
-  const handleOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
+  const handleClose = () => setOpen(false);
 
   return (
     <Box className={classes.works} id="works">
+      {/* All images shown */}
       <ImageList
         variant="masonry"
         cols={imageListSm ? 1 : imageListMd ? 4 : 2}
         gap={8}
       >
-        {visibleImages.map((work, idx) => (
+        {works.map((work, idx) => (
           <ImageListItem key={work.alt} sx={{ cursor: "pointer" }}>
             <img
               src={work.img}
               alt={work.alt}
-              id={work.id}
               loading="lazy"
               onClick={() => handleImageClick(idx)}
             />
           </ImageListItem>
-        ))}{" "}
+        ))}
       </ImageList>
-      <Grid container justifyContent="center">
-        {works.length != visibleImages.length ? (
-          <Button
-            variant="contained"
-            onClick={handleLoadMoreWorks}
-            className={classes.loadMoreButton}
-          >
-            More
-          </Button>
-        ) : (
-          <Button
-            variant="contained"
-            disabled
-            className={classes.loadMoreButton}
-          >
-            You’ve reached the end of the list
-          </Button>
-        )}
-      </Grid>
 
       {/* Modal */}
-      <Box className={modalClasses.modalWrapper}>
-        <Box className={modalClasses.modal}>
-          <Modal
-            open={open}
-            onClose={handleClose}
-            slots={{ backdrop: Backdrop }}
+      <Modal
+        open={open}
+        onClose={handleClose}
+        closeAfterTransition
+        slots={{ backdrop: Backdrop }}
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Fade in={open}>
+          <Box
+            sx={{
+              position: "relative",
+              width: "90vw",
+              height: "90vh",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              backgroundColor: "#111",
+              borderRadius: "12px",
+              overflow: "hidden",
+            }}
           >
-            <Fade in={open}>
-              <Box className={modalClasses.modalBox}>
-                <IconButton
-                  onClick={handleLeftClick}
-                  className={modalClasses.iconButton}
-                >
-                  <ArrowCircleLeftIcon fontSize="large" />
-                </IconButton>
-                <img
-                  src={works[currentIndex].img}
-                  alt={works[currentIndex].alt}
-                  id={works[currentIndex].id}
-                  className={modalClasses.modalImage}
-                />
-                <IconButton
-                  onClick={handleRightClick}
-                  className={modalClasses.iconButton}
-                >
-                  <ArrowCircleRightIcon fontSize="large" />
-                </IconButton>
-              </Box>
-            </Fade>
-          </Modal>
-        </Box>
-      </Box>
+            {/* Cross Button */}
+            <IconButton
+              onClick={handleClose}
+              sx={{
+                position: "absolute",
+                top: 10,
+                right: 10,
+                color: "#fff",
+                zIndex: 3,
+              }}
+            >
+              ✕
+            </IconButton>
+
+            {/* Left Arrow */}
+            <IconButton
+              onClick={handleLeftClick}
+              sx={{
+                position: "absolute",
+                left: 10,
+                color: "#fff",
+                zIndex: 2,
+              }}
+            >
+              <ArrowCircleLeftIcon fontSize="large" />
+            </IconButton>
+
+            {/* Image */}
+            <Box
+              component="img"
+              src={works[currentIndex].img}
+              alt={works[currentIndex].alt}
+              sx={{
+                maxWidth: "100%",
+                maxHeight: "100%",
+                objectFit: "contain",
+              }}
+            />
+
+            {/* Right Arrow */}
+            <IconButton
+              onClick={handleRightClick}
+              sx={{
+                position: "absolute",
+                right: 10,
+                color: "#fff",
+                zIndex: 2,
+              }}
+            >
+              <ArrowCircleRightIcon fontSize="large" />
+            </IconButton>
+          </Box>
+        </Fade>
+      </Modal>
     </Box>
   );
 };
 
-export default Works;
+export default Works;he

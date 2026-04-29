@@ -14,6 +14,7 @@ import w13 from './13.jpg'
 import w14 from './14.jpg'
 import w15 from './15.jpg'
 import w16 from './16.jpg'
+import w17 from './17.png'
 
 
 const works = [
@@ -112,6 +113,12 @@ const works = [
         img: w16,
         title: 'Work 16',
         alt: 'Work 16',
+    },
+    {
+        id: 17,
+        img: w17,
+        title: 'Work 17',
+        alt: 'Work 17',
     },
 ]
 
